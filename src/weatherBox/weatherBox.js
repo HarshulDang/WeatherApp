@@ -28,8 +28,8 @@ class WeatherBox extends Component {
                             <div className="col-12 d-flex" style={{textAlign: 'end'}}>
                                 <h6 className="col-5" style={{margin: '0 auto'}}>{Math.round(this.farenhiteToCelcius(city.main.temp) * 100)/100}{'°C'}</h6>
                                 <div className="col-7 d-flex flex-column">
-                                    <span>Max: {Math.round(this.farenhiteToCelcius(city.main.temp_max) * 100)/100}{°C}</span>
-                                    <span>Min: {Math.round(this.farenhiteToCelcius(city.main.temp_min) * 100)/100}{°C}</span>
+                                    <span>Max: {Math.round(this.farenhiteToCelcius(city.main.temp_max) * 100)/100}{'°C'}</span>
+                                    <span>Min: {Math.round(this.farenhiteToCelcius(city.main.temp_min) * 100)/100}{'°C'}</span>
                                     <span>Humidity: {city.main.humidity}</span>
                                 </div>
                             </div>
@@ -51,10 +51,10 @@ class WeatherBox extends Component {
                                     <div className="col-8">
                                         <h2 className="card-title" style={{textAlign: 'center', paddingTop: '13px'}}>{city.name}</h2>
                                         <div className="col-12 d-flex" style={{textAlign: 'end', marginTop: '28px'}}>
-                                        <h3 className="col-5" style={{margin: '0 auto'}}>Temperature: {Math.round(this.farenhiteToCelcius(city.main.temp) * 100)/100}{'C'}</h3>
+                                        <h3 className="col-5" style={{margin: '0 auto'}}>Temperature: {Math.round(this.farenhiteToCelcius(city.main.temp) * 100)/100}{'°C'}</h3>
                                         <div className="col-7 d-flex flex-column">
-                                            <span style={{fontSize: '24px'}}>Max: {Math.round(this.farenhiteToCelcius(city.main.temp_max) * 100)/100}</span>
-                                            <span style={{fontSize: '24px'}}>Min: {Math.round(this.farenhiteToCelcius(city.main.temp_min) * 100)/100}</span>
+                                            <span style={{fontSize: '24px'}}>Max: {Math.round(this.farenhiteToCelcius(city.main.temp_max) * 100)/100}{'°C'}</span>
+                                            <span style={{fontSize: '24px'}}>Min: {Math.round(this.farenhiteToCelcius(city.main.temp_min) * 100)/100}{'°C'}</span>
                                             
                                         </div>
                                 </div>
