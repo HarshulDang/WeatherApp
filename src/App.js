@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import WeatherBox from './weatherBox/weatherBox';
 import "./style.css";
 import SideBar from "./sidebar";
-import BarGraph from './barGraph/barGraph';
 
 const URL = (city) => {
   return `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1685bde351f4760e5c742a11817431a6`;
 }
 // const URL = 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=1685bde351f4760e5c742a11817431a6';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -90,15 +90,15 @@ class App extends React.Component {
 
    }
   return (
-    <div id="App">
-      <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
-      <div id="page-wrap">
-          <h1>Simple Weather App</h1>
-          <h2>Live Weather of 5 Countries</h2>
-          {dataAvailable ? <WeatherBox data={data}/> : <h2 className="w-100" style={{textAlign: 'center'}}>Loading....</h2>}
-      </div>
-      <BarGraph/>
-    </div>
+          <div id="App">
+        <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
+        <div id="page-wrap">
+            <h1>Simple Weather App</h1>
+            <h2>Live Weather of 5 Countries</h2>
+            {dataAvailable ? <WeatherBox data={data}/> : <h2 className="w-100" style={{textAlign: 'center'}}>Loading....</h2>}
+            
+        </div>
+      </div>  
   );
  }
 }

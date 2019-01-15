@@ -1,9 +1,14 @@
+
 import React, {Component} from 'react';
+import { VictoryChart } from 'victory';
+import { VictoryLine } from 'victory';
+import { VictoryAxis } from 'victory';
+import { VictoryBar } from 'victory';
 
 
 class WeatherBox extends Component {
 
-    farenhiteToCelcius = (F) => {                      //<img src={require('../assets/fonts/cloud.png')} alt="cloud"/>
+    farenhiteToCelcius = (F) => {                      
         return F - 273.15;
     }
 
@@ -56,7 +61,7 @@ class WeatherBox extends Component {
                                 </div>
                                     </div>
                                     <div className="col-4 d-flex flex-column">
-                                        <img src={require('../assets/fonts/cloud64.png')} alt="cloud" style={{height: '100%', margin: '10px'}}/>
+                                        <img id="wicon" src={`http://openweathermap.org/img/w/${city.weather[0].icon}.png`}/>
                                         <h5 style={{textAlign: 'center'}}>{city.weather[0].main}</h5>
                                     </div>
                                 </div>
@@ -75,6 +80,43 @@ class WeatherBox extends Component {
             <div>
                 
                 {window.outerWidth < 400 ? <div className="d-flex flex-row">{this.renderMobileCard(data)}</div> : <div className="d-flex flex-wrap">{this.renderCard(data)}</div>}
+                <div className="col-6 offset-3">
+                    <VictoryChart 
+                         domainPadding={{x: 40}}>
+                         <VictoryBar
+                           barRatio={0.5}
+                           cornerRadius={10}
+                           height={200}
+                           animate={{
+                               duration: 2000,
+                               onLoad: { duration: 1000 }
+                           }}
+                           data={[
+                             { City: "Shanghai", actual: data[0].main.temp },
+                             { City: "London",  actual: data[1].main.temp },
+                             { City: "Mumbai",  actual: data[2].main.temp },
+                             { City: "California",  actual: data[3].main.temp },
+                             { City: "Kathmandu",  actual: data[4].main.temp }
+                           ]}
+                           x="City"
+                           y={(d) => (d.actual - 273.15)}
+                         />
+                         <VictoryAxis
+                           label="Cities"
+                           style={{
+                             axisLabel: { padding: 30 }
+                           }}
+                         />
+
+                         <VictoryAxis dependentAxis
+                           label="Temperature in °C"
+                           style={{
+                             axisLabel: { padding: 35 }
+                           }}
+
+                         />
+                    </VictoryChart>
+                </div>
             </div>
             
 
