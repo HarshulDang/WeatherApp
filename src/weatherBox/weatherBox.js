@@ -1,7 +1,6 @@
 
 import React, {Component} from 'react';
 import { VictoryChart } from 'victory';
-import { VictoryLine } from 'victory';
 import { VictoryAxis } from 'victory';
 import { VictoryBar } from 'victory';
 
@@ -22,7 +21,7 @@ class WeatherBox extends Component {
                             <div className="d-flex justify-content-around">
                                 <h5 className="card-title" style={{textAlign: 'center', paddingTop: '13px'}}>{city.name}</h5>
                                 <div className="d-flex flex-column">
-                                    <img id="wicon" src={`http://openweathermap.org/img/w/${city.weather[0].icon}.png`}/>
+                                    <img id="wicon" src={`http://openweathermap.org/img/w/${city.weather[0].icon}.png`} alt=''/>
                                     <h6 style={{textAlign: 'end'}}>{city.weather[0].main}</h6>
                                 </div>
                             </div>
@@ -61,7 +60,7 @@ class WeatherBox extends Component {
                                 </div>
                                     </div>
                                     <div className="col-4 d-flex flex-column">
-                                        <img id="wicon" src={`http://openweathermap.org/img/w/${city.weather[0].icon}.png`}/>
+                                        <img id="wicon" src={`http://openweathermap.org/img/w/${city.weather[0].icon}.png`} alt=''/>
                                         <h5 style={{textAlign: 'center'}}>{city.weather[0].main}</h5>
                                     </div>
                                 </div>
