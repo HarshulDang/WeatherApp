@@ -93,6 +93,8 @@ class App extends React.Component {
     <div id="App">
       <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
       <div id="page-wrap">
+          <h1>Simple Weather App</h1>
+          <h2>Live Weather of 5 Countries</h2>
           {dataAvailable ? <WeatherBox data={data}/> : <h2 className="w-100" style={{textAlign: 'center'}}>Loading....</h2>}
       </div>
       <BarGraph/>
